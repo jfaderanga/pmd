@@ -49,5 +49,9 @@ elif [ -z "$reportfile" ]; then
     printf "${RED}Missing!${NC} output directory -r"
     exit 0
 else
-    pmd.bat -d "$path" -f "$output" -R "$ruleset" --report-file "$reportfile" --no-cache
+    if [ "$OSTYPE" == msys ]; then
+        pmd.bat -d "$path" -f "$output" -R "$ruleset" --report-file "$reportfile" --no-cache
+    elif [ "$OSTYPE" == darwin ]; then
+        pmd -d "$path" -f "$output" -R "$ruleset" --report-file "$reportfile" --no-cache
+    fi
 fi

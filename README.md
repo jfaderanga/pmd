@@ -1,4 +1,4 @@
-# Quick salesforce and apex class code analyser
+# Quick salesforce apex and visualforce code analyser
 
 ## Pre-requisites
 1. Download and install PMD Source Code Analyzer from https://pmd.github.io/
